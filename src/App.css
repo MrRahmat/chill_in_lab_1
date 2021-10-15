@@ -1,38 +1,159 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Birthstone&family=Ephesis&family=Open+Sans+Condensed:wght@300&display=swap');
+
+h2 {
+  font-family: "Open Sans Condensed", serif;
+  font-size: 6.5rem;
+  color: #232326;
+  margin-bottom: 32px;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+p{
+  font-size: 1rem;
+  line-height: 1.625;
+  margin: 0 0 16px;
+  color: #232326;
+}
+
+.wrapper{
+  height: 100vh;
+  width: 100%;
+}
+.header{
+  width: 100%;
+  position: absolute;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.logo{
+  display: flex;
+  justify-content: center;
+  cursor: default;
+}
+
+.mr{
+  font-family: "Birthstone";
+  font-size: 5em;
+  cursor: pointer;
+}
+
+.nickname{
+  font-family: "Ephesis";
+  font-size: 4em;
+  margin-top: .6em;
+  cursor: pointer;
+}
+
+.intro{
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.intro::before{
+  content: '';
+  background-position: center;
+  width: 200%;
+  height: 270%;
+  position: absolute;
+  overflow: hidden;
+  left: -50%;
+  top: -50%;
+  opacity: .75;
+  background: url(images/noise.png);
+  animation: noise .8s steps(20) infinite; 
 }
 
-.App-header {
-  background-color: #282c34;
+@keyframes noise {
+  to {
+    transform: rotate(180deg); 
+  } 
+}
+
+.intro__title{
+  font-size: 4em;
+  font-weight: 300;
+  padding-top: 40vh;
+}
+
+.intro__footer{
+  position: absolute;
+  bottom: 3vh;
+  left: 40%;
+  right: 40%;
+}
+
+.section_01{
+  height: auto;
+  padding-left: 8.125vw;
+  padding-right: 8.125vw;
+  position: relative;
+  background-color: #232326;
+}
+
+.number{
+  position: relative;
+}
+
+.number-wrapper {
+  position: absolute;
+  text-align: right;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 5;
+  right: 0;
+  left: 0;
+}
+
+.number-wrapper img {
+  height: 95vh;
+  max-height: 800px;
+  width: auto;
+  float: right;
+  z-index: 0;
+  margin: 6vh 0;
+  display: block;
+}
+
+.number-wrapper.outlined {
+  position: relative;
+  z-index: 10;
+  top: 0;
+  right: 0; 
+}
+
+.section__text{
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  position: relative;
+  z-index: 11;
+  
+  background-image: linear-gradient(to bottom, rgba(35, 35, 38, 0.1) 0%, #232326 90%);
+  background-repeat: repeat-x;
 }
 
-.App-link {
-  color: #61dafb;
+.section__text * {
+  color: #F5F1EE;
+}
+    
+
+.section__text .left{
+  width: 38.75vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.section__text .right {
+  width: 38.75vw;
+  columns: 2;
+  column-count: 2;
+  column-gap: 2vw; }
